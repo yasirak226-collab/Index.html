@@ -1,32 +1,71 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Gloo Forever?</title>
+<title>Gloo Forever</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&family=Orbitron:wght@700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@700&family=Poppins:wght@400;600&display=swap" rel="stylesheet">
 
 <style>
 body {
-    margin: 0;
-    height: 100vh;
-    background: radial-gradient(circle at center, #5a189a, #240046);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-family: 'Poppins', sans-serif;
-    overflow: hidden;
-    text-align: center;
-    color: white;
+    margin:0;
+    height:100vh;
+    background: radial-gradient(circle at center,#6a0dad,#240046);
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    font-family:Poppins;
+    overflow:hidden;
+    color:white;
+    text-align:center;
 }
 
-.container {
-    padding: 20px;
-}
+.container { padding:20px; }
 
 h1 {
-    font-family: 'Orbitron', sans-serif;
+    font-family:Orbitron;
+    font-size:2rem;
+}
+
+.hero-img {
+    width:260px;
+    border-radius:15px;
+    margin:10px;
+    box-shadow:0 0 20px #b266ff;
+}
+
+button {
+    padding:12px 30px;
+    margin:10px;
+    font-size:1.1rem;
+    border:none;
+    border-radius:30px;
+    cursor:pointer;
+    transition:.3s;
+}
+
+#yesBtn {
+    background:gold;
+    color:black;
+}
+
+#noBtn {
+    background:grey;
+    position:relative;
+}
+
+.medal {
+    position:absolute;
+    font-family:Orbitron;
+    font-size:2.5rem;
+    color:gold;
+    animation:pop 1.5s ease forwards;
+}
+
+@keyframes pop {
+    0% {transform:scale(.3);opacity:0;}
+    50% {transform:scale(1.4);opacity
     font-size: 2rem;
 }
 
