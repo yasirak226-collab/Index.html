@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Mythic Love - Gloo</title>
+<title>Vivi x Gloo Forever</title>
 
 <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@700&family=Poppins:wght@400;600&display=swap" rel="stylesheet">
 
@@ -11,7 +11,7 @@
 body{
 margin:0;
 height:100vh;
-background:radial-gradient(circle at center,#7b2cbf,#240046);
+background:radial-gradient(circle at center,#8a2be2,#240046);
 display:flex;
 justify-content:center;
 align-items:center;
@@ -21,13 +21,103 @@ color:white;
 text-align:center;
 }
 
-/* Screen Shake */
-.shake{
-animation:shake .4s;
+/* Background floating particles */
+.particle{
+position:absolute;
+font-size:22px;
+animation:floatUp 6s linear infinite;
+opacity:0.7;
 }
+
+@keyframes floatUp{
+0%{transform:translateY(100vh);opacity:0;}
+50%{opacity:1;}
+100%{transform:translateY(-10vh);opacity:0;}
+}
+
+/* Shake */
 @keyframes shake{
-0%{transform:translate(0,0);}
-25%{transform:translate(-10px,10px);}
+0%{transform:translate(0);}
+25%{transform:translate(-8px,6px);}
+50%{transform:translate(8px,-6px);}
+75%{transform:translate(-6px,8px);}
+100%{transform:translate(0);}
+}
+.shake{
+animation:shake 0.4s ease;
+}
+
+.container{
+z-index:2;
+}
+
+h1{
+font-family:Orbitron;
+font-size:2rem;
+}
+
+/* Buttons */
+button{
+padding:14px 35px;
+margin:12px;
+font-size:1.1rem;
+border:none;
+border-radius:30px;
+cursor:pointer;
+transition:.3s;
+}
+
+#yesBtn{
+background:gold;
+color:black;
+}
+
+#noBtn{
+background:grey;
+position:relative;
+}
+
+/* Medal */
+.medal{
+position:absolute;
+top:50%;
+left:50%;
+transform:translate(-50%,-50%) scale(0);
+font-family:Orbitron;
+font-size:2.8rem;
+color:gold;
+animation:medalAnim 1.5s ease forwards;
+}
+
+@keyframes medalAnim{
+0%{transform:translate(-50%,-50%) scale(0);opacity:0;}
+50%{transform:translate(-50%,-50%) scale(1.5);opacity:1;}
+100%{transform:translate(-50%,-50%) scale(1);opacity:0;}
+}
+
+/* Mythic Banner */
+.mythic{
+position:absolute;
+top:30%;
+left:50%;
+transform:translate(-50%,-50%) scale(0);
+font-family:Orbitron;
+font-size:2rem;
+color:#ff66ff;
+animation:mythicAnim 2s forwards;
+}
+
+@keyframes mythicAnim{
+0%{transform:translate(-50%,-50%) scale(0);}
+50%{transform:translate(-50%,-50%) scale(1.3);}
+100%{transform:translate(-50%,-50%) scale(1);}
+}
+
+/* Footer */
+.footer{
+position:absolute;
+bottom:15px;
+width:100%;
 50%{transform:translate(10px,-10px);}
 75%{transform:translate(-10px,10px);}
 100%{transform:translate(0,0);}
