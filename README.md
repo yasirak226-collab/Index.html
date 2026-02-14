@@ -8,24 +8,97 @@
 <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@700&family=Poppins:wght@400;600&display=swap" rel="stylesheet">
 
 <style>
-body {
-    margin:0;
-    height:100vh;
-    background: radial-gradient(circle at center,#6a0dad,#240046);
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    font-family:Poppins;
-    overflow:hidden;
-    color:white;
-    text-align:center;
+body{
+margin:0;
+height:100vh;
+background:radial-gradient(circle at center,#7b2cbf,#240046);
+display:flex;
+justify-content:center;
+align-items:center;
+font-family:Poppins;
+overflow:hidden;
+color:white;
+text-align:center;
 }
 
-.container { padding:20px; }
+/* Loading */
+.loading{
+position:absolute;
+width:100%;
+height:100%;
+background:black;
+display:flex;
+justify-content:center;
+align-items:center;
+font-family:Orbitron;
+font-size:1.8rem;
+z-index:5;
+animation:fadeOut 1s ease 2s forwards;
+}
 
-h1 {
-    font-family:Orbitron;
-    font-size:2rem;
+@keyframes fadeOut{
+to{opacity:0;visibility:hidden;}
+}
+
+.container{padding:20px;z-index:2;}
+
+h1{
+font-family:Orbitron;
+font-size:2rem;
+}
+
+/* Slime blobs */
+.blob{
+position:absolute;
+width:120px;
+height:120px;
+background:rgba(178,102,255,0.4);
+border-radius:50%;
+filter:blur(20px);
+animation:blobMove 8s infinite alternate ease-in-out;
+}
+
+@keyframes blobMove{
+from{transform:translate(-50px,-50px);}
+to{transform:translate(50px,50px);}
+}
+
+button{
+padding:12px 30px;
+margin:10px;
+font-size:1.1rem;
+border:none;
+border-radius:30px;
+cursor:pointer;
+transition:.3s;
+}
+
+#yesBtn{
+background:gold;
+color:black;
+}
+
+#noBtn{
+background:grey;
+position:relative;
+}
+
+/* Medal */
+.medal{
+position:absolute;
+top:50%;
+left:50%;
+transform:translate(-50%,-50%) scale(0);
+font-family:Orbitron;
+font-size:2.5rem;
+color:gold;
+animation:medalAnim 1.5s ease forwards;
+}
+
+@keyframes medalAnim{
+0%{transform:translate(-50%,-50%) scale(0);opacity:0;}
+50%{transform:translate(-50%,-50%) scale(1.5);opacity:1;}
+100%{transform:tran
 }
 
 .hero-img {
