@@ -3,27 +3,144 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Gloo Forever - MLBB Proposal</title>
+<title>Mythic Love - Gloo</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@700;900&family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@700&family=Poppins:wght@400;600&display=swap" rel="stylesheet">
 
 <style>
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+body{
+margin:0;
+height:100vh;
+background:radial-gradient(circle at center,#7b2cbf,#240046);
+display:flex;
+justify-content:center;
+align-items:center;
+font-family:Poppins;
+overflow:hidden;
+color:white;
+text-align:center;
 }
 
-body {
-    height: 100vh;
-    background: linear-gradient(135deg, #1a0033 0%, #2d0052 50%, #1a0033 100%);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-family: 'Poppins', sans-serif;
-    overflow: hidden;
-    color: white;
-    text-align: center;
+/* Screen Shake */
+.shake{
+animation:shake .4s;
+}
+@keyframes shake{
+0%{transform:translate(0,0);}
+25%{transform:translate(-10px,10px);}
+50%{transform:translate(10px,-10px);}
+75%{transform:translate(-10px,10px);}
+100%{transform:translate(0,0);}
+}
+
+/* Flash */
+.flash{
+position:absolute;
+width:100%;
+height:100%;
+background:white;
+opacity:0;
+animation:flashAnim .5s ease;
+}
+@keyframes flashAnim{
+0%{opacity:1;}
+100%{opacity:0;}
+}
+
+/* Loading */
+.loading{
+position:absolute;
+width:100%;
+height:100%;
+background:black;
+display:flex;
+justify-content:center;
+align-items:center;
+font-family:Orbitron;
+font-size:1.8rem;
+z-index:5;
+animation:fadeOut 1s ease 2s forwards;
+}
+@keyframes fadeOut{
+to{opacity:0;visibility:hidden;}
+}
+
+/* Slime background blobs */
+.blob{
+position:absolute;
+width:150px;
+height:150px;
+background:rgba(178,102,255,0.4);
+border-radius:50%;
+filter:blur(30px);
+animation:blobMove 8s infinite alternate ease-in-out;
+}
+@keyframes blobMove{
+from{transform:translate(-50px,-50px);}
+to{transform:translate(50px,50px);}
+}
+
+.container{z-index:2;}
+
+h1{
+font-family:Orbitron;
+font-size:2rem;
+}
+
+/* Buttons */
+button{
+padding:12px 30px;
+margin:10px;
+font-size:1.1rem;
+border:none;
+border-radius:30px;
+cursor:pointer;
+transition:.3s;
+}
+
+#yesBtn{
+background:gold;
+color:black;
+}
+
+#noBtn{
+background:grey;
+position:relative;
+}
+
+/* Medal */
+.medal{
+position:absolute;
+top:50%;
+left:50%;
+transform:translate(-50%,-50%) scale(0);
+font-family:Orbitron;
+font-size:2.5rem;
+color:gold;
+animation:medalAnim 1.5s ease forwards;
+}
+@keyframes medalAnim{
+0%{transform:translate(-50%,-50%) scale(0);opacity:0;}
+50%{transform:translate(-50%,-50%) scale(1.5);opacity:1;}
+100%{transform:translate(-50%,-50%) scale(1);opacity:0;}
+}
+
+/* Rank Banner */
+.rank{
+position:absolute;
+top:30%;
+left:50%;
+transform:translate(-50%,-50%);
+font-family:Orbitron;
+font-size:2rem;
+color:#ffdd00;
+opacity:0;
+animation:rankAnim 2s ease forwards;
+}
+@keyframes rankAnim{
+0%{opacity:0;transform:translate(-50%,-50%) scale(.5);}
+50%{opacity:1;transform:translate(-50%,-50%) scale(1.3);}
+100%{opac
     position: relative;
 }
 
