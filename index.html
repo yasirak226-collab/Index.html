@@ -3,95 +3,30 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Gloo Forever Proposal</title>
-    <link href="https://fonts.googleapis.com/css2?family=Orbitron&family=Poppins:wght@400;600&display=swap" rel="stylesheet">
-    <style>
-        body {
-            background: radial-gradient(circle, #6a0dad, #800080);
-            font-family: 'Poppins', sans-serif;
-            color: white;
-            overflow: hidden;
-        }
-        #loading {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            font-size: 2em;
-            display: none;
-        }
-        #container {
-            text-align: center;
-            margin-top: 20%;
-        }
-        .button {
-            padding: 15px 30px;
-            font-size: 1.5em;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-            transition: all 0.3s;
-        }
-        #yes {
-            background: #32cd32;
-        }
-        #no {
-            background: #ff6347;
-        }
-        .medal {
-            display: none;
-            font-size: 3em;
-        }
-    </style>
+    <title>Gloo Proposal</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="script.js" defer></script>
 </head>
 <body>
-    <div id="loading">MATCH FOUND… Loading Gloo 💜</div>
-    <div id="container">
-        <img src="path_to_gloo1.gif" alt="Gloo 1"/>
-        <img src="path_to_gloo2.gif" alt="Gloo 2"/>
-        <br/><br/>
-        <button id="yes" class="button">YES</button>
-        <button id="no" class="button">NO</button>
-        <div id="medal-container">
-            <span id="savage" class="medal">🏅 SAVAGE</span>
-            <span id="legendary" class="medal">🏅 LEGENDARY</span>
-            <span id="mvp" class="medal">🏅 MVP</span>
-        </div>
+    <div class="container">
+        <header>
+            <h1>Enhanced Gloo Proposal</h1>
+        </header>
+        <main>
+            <section class="character-styling">
+                <img src="mlbb_character.png" alt="MLBB Character" class="character">
+            </section>
+            <section class="gloo-gifs">
+                <img src="gloo_animated.gif" alt="Gloo Animation">
+            </section>
+            <div class="victory-screen hidden">
+                <h2>Victory!</h2>
+                <button onclick="restartGame()">Play Again</button>
+            </div>
+        </main>
+        <footer>
+            <p>Made with love by yasirak226</p>
+        </footer>
     </div>
-    <script>
-        const loading = document.getElementById('loading');
-        loading.style.display = 'block';
-        setTimeout(() => { loading.style.display = 'none'; }, 3000);
-
-        const yesButton = document.getElementById('yes');
-        const noButton = document.getElementById('no');
-        const medals = document.querySelectorAll('.medal');
-
-        yesButton.addEventListener('click', () => {
-            medals.forEach(medal => medal.style.display = 'inline');
-            document.body.innerHTML += '<div style="position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.5);">Falling Flowers Animation</div>';
-            // Add falling flowers and purple slime animations here
-        });
-
-        noButton.addEventListener('mouseenter', () => {
-            noButton.style.transform = 'translate(' + (Math.random() * 100 - 50) + 'px, ' + (Math.random() * 100 - 50) + 'px)';
-            for (let i = 0; i < 3; i++) {
-                const msg = document.createElement('span');
-                msg.innerText = 'NO';
-                msg.style.position = 'absolute';
-                msg.style.left = Math.random() * window.innerWidth + 'px';
-                msg.style.top = Math.random() * window.innerHeight + 'px';
-                document.body.appendChild(msg);
-            }
-        });
-
-        yesButton.addEventListener('mouseover', () => {
-            yesButton.style.transform = 'scale(1.2)';
-        });
-        yesButton.addEventListener('mouseout', () => {
-            yesButton.style.transform = 'scale(1)';
-        });
-
-    </script>
 </body>
 </html>
